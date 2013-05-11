@@ -16,12 +16,12 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
  
- $cakeDescription = __d('cake_dev', "UAILink Marketing Digital : CRM ");
+ $cakeDescription = __d('cake_dev', "UAIShop : Compre aqui ");
 
  
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
@@ -30,25 +30,25 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
+		echo $this->Html->css('bootstrap');	
+		echo $this->Html->css('bootstrap-responsive');
 		echo $this->Html->css('cake.generic');
-		echo $this->Html->css('site');
-		echo $this->Html->css('flexible-columns');
-		echo $this->Html->css('TableCSSCode');
+		echo $this->Html->css('site');		
 		echo $this->Html->css('flexslider');
-		
-		echo $this->Html->script('jquery-1.8.1.min');
-		echo $this->Html->script('jquery.form');
-		echo $this->Html->script('jquery.flexslider-min');
-		echo $this->Html->script('jquery.meio.mask.min');
-		
-		
+						
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 		
 		
 	?>
+	
+	<style type="text/css">
+      body {
+        padding-top: 41px;
+        
+      }
+    </style>
 
 	<!-- Mobile viewport optimisation -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,15 +56,55 @@
 	<!-- (en) Add your meta data here -->
 	<!-- (de) Fuegen Sie hier ihre Meta-Daten ein -->
 	
-	<!--[if lte IE 7]>
-	<link href="../yaml/core/iehacks.css" rel="stylesheet" type="text/css" />
-	<![endif]-->
-
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	
-    <script type="text/javascript">
+</head>
+<body>
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">UAI-CRM</a>
+          <div class="nav-collapse collapse">            
+              <?php echo $this->element('menu');?>            
+            <form class="navbar-search pull-right">
+              <input class="search-query" type="text" placeholder="Digite o produto">              
+              <button type="submit" class="btn">Pesquisar</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div>		
+    <?php echo $this->Session->flash(); ?>
+</div>
+<div id="main" class="container" style="">		
+    <?php echo $this->fetch('content'); ?>
+</div>
+    
+
+<footer style="background-color: black; height: 20em; padding-top: 20px;">
+	<div class="container">
+    	<div class="row">
+    		
+    	</div>
+	</div>
+</footer>
+
+<?php
+        echo $this->Html->script('jquery-1.8.1.min');
+		echo $this->Html->script('jquery.form');
+		echo $this->Html->script('jquery.flexslider-min');
+		echo $this->Html->script('jquery.meio.mask.min');
+		echo $this->Html->script('bootstrap');
+?>
+
+<script type="text/javascript">
           // call setMask function on the document.ready event
           jQuery(function($) {
             $('input[type="text"]').setMask();
@@ -72,59 +112,10 @@
           });
     </script>
     
-    <!-- Cached scripts block -->
+        <!-- Cached scripts block -->
 
     <?php echo $this->Js->writeBuffer(array('cache'=>'true')); // Write cached scripts ?>
     
-   
-	
-</head>
-<body>
-
-<ul class="ym-skiplinks">
-	<li><a class="ym-skip" href="#nav">Skip to navigation (Press Enter)</a></li>
-	<li><a class="ym-skip" href="#main">Skip to main content (Press Enter)</a></li>
-</ul>
-
-<header>
-	<div class="ym-wrapper">
-		<div class="ym-wbox">
-			<h1>UAILink CRM</h1>
-		</div>
-	</div>
-</header>
-<nav id="nav">
-	<div class="ym-wrapper">
-		<div class="ym-hlist">
-			<?php echo $this->element('menu'); ?>
-			<form class="ym-searchform">
-				<input class="ym-searchfield" type="search" placeholder="Search..." />
-				<input class="ym-searchbutton" type="submit" value="Search" />
-			</form>
-		</div>
-	</div>
-</nav>
-<div id="main">
-	<div class="ym-wrapper">
-		<div class="ym-wbox">
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-	</div>
-</div>
-<footer>
-	<div class="ym-wrapper">
-		<div class="ym-wbox">
-			<p>© Company 2012 &ndash; Layout based on <a href="http://www.yaml.de">YAML</a></p>
-		</div>
-	</div>
-</footer>
-
-<!-- full skip link functionality in webkit browsers -->
-
-<?php echo $this->Html->script('yaml-focusfix.js'); ?>
-
 </body>
 
 </html>

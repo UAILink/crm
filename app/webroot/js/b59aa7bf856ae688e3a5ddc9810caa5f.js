@@ -1,2 +1,0 @@
-$(document).ready(function () {$("#link-978677614").bind("click", function (event) {$.ajax({success:function (data, textStatus) {alert("Foto de capa configurada com sucesso!");}, url:"\/imobiliariaverissimo\/imagens\/setCapa\/imovel1-580484825.jpg"});
-return false;});});

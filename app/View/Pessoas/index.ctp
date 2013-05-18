@@ -1,8 +1,36 @@
-<div class="ym-column">
-    <div class="ym-col1" >
-        <div class="pessoas index ym-cbox">
+<div class="row-fluid">
+    <div class="span4">
+        <div class="actions well">
+        
+	        <ul class="nav nav-list">
+	        
+	        	<li class='nav-header'><?php echo __('Ações'); ?></li>
+        
+		        <li><?php echo $this->Html->link(__('Novo Pessoa'), array('action' => 'add')); ?></li>        <li class='nav-header'><?php echo __('Ramo Atividades'); ?></li>		<li><?php echo $this->Html->link(__('Listar Ramo Atividades'), array('controller' => 'ramo_atividades', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Ramo Atividade'), array('controller' => 'ramo_atividades', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Tipo Pessoas'); ?></li>		<li><?php echo $this->Html->link(__('Listar Tipo Pessoas'), array('controller' => 'tipo_pessoas', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Tipo Pessoa'), array('controller' => 'tipo_pessoas', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Contratos'); ?></li>		<li><?php echo $this->Html->link(__('Listar Contratos'), array('controller' => 'contratos', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Contrato'), array('controller' => 'contratos', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas Conta Correntes'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas Conta Correntes'), array('controller' => 'pessoas_conta_correntes', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Conta Corrente'), array('controller' => 'pessoas_conta_correntes', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas Contatos'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas Contatos'), array('controller' => 'pessoas_contatos', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Contato'), array('controller' => 'pessoas_contatos', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas Documentos'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas Documentos'), array('controller' => 'pessoas_documentos', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Documento'), array('controller' => 'pessoas_documentos', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas Enderecos'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas Enderecos'), array('controller' => 'pessoas_enderecos', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Endereco'), array('controller' => 'pessoas_enderecos', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas Iterações'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas Iterações'), array('controller' => 'pessoas_iteracoes', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Iteração'), array('controller' => 'pessoas_iteracoes', 'action' => 'add')); ?></li> 
+        
+        	</ul>
+	        
+        </div>
+    </div>
+    <div class="span8" >
+        <div class="pessoas index">
 	        <h2><?php echo __('Pessoas');?></h2>
-	        <table cellpadding="0" cellspacing="0">
+	        <table class="table table-striped">
 	        <tr>
 	        		        <th><?php echo $this->Paginator->sort('id');?></th>
 	        		        <th><?php echo $this->Paginator->sort('ramo_atividade_id');?></th>
@@ -20,7 +48,7 @@
 	<tr>
 		<td><?php echo h($pessoa['Pessoa']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($pessoa['RamoAtividade']['id'], array('controller' => 'ramo_atividades', 'action' => 'view', $pessoa['RamoAtividade']['id'])); ?>
+			<?php echo $this->Html->link($pessoa['RamoAtividade']['descricao'], array('controller' => 'ramo_atividades', 'action' => 'view', $pessoa['RamoAtividade']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($pessoa['TipoPessoa']['descricao'], array('controller' => 'tipo_pessoas', 'action' => 'view', $pessoa['TipoPessoa']['id'])); ?>
@@ -56,27 +84,5 @@
 	        </div>
         </div>
     </div>
-    <div class="ym-col3">
-        <div class="actions ym-cbox">
-	        <h3><?php echo __('Ações'); ?></h3>
-	        
-		        <?php echo $this->Html->link(__('Novo Pessoa'), array('action' => 'add'), array('class'=>'ym-button')); ?>        		<?php echo $this->Html->link(__('Listar Ramo Atividades'), array('controller' => 'ramo_atividades', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Ramo Atividade'), array('controller' => 'ramo_atividades', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Tipo Pessoas'), array('controller' => 'tipo_pessoas', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Tipo Pessoa'), array('controller' => 'tipo_pessoas', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Contratos'), array('controller' => 'contratos', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Contrato'), array('controller' => 'contratos', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas Conta Correntes'), array('controller' => 'pessoas_conta_correntes', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Conta Corrente'), array('controller' => 'pessoas_conta_correntes', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas Contatos'), array('controller' => 'pessoas_contatos', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Contato'), array('controller' => 'pessoas_contatos', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas Documentos'), array('controller' => 'pessoas_documentos', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Documento'), array('controller' => 'pessoas_documentos', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas Enderecos'), array('controller' => 'pessoas_enderecos', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Endereco'), array('controller' => 'pessoas_enderecos', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas Iterações'), array('controller' => 'pessoas_iteracoes', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Iteração'), array('controller' => 'pessoas_iteracoes', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-	        </ul>
-        </div>
-    </div>
+    
 </div>

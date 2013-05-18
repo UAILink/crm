@@ -1,9 +1,27 @@
 
-<div class="ym-column">
-  <div class="ym-col1" >
+<div class="row">
+
+<div class="span4" >
+    <div class="actions well">    
+    <ul class="nav nav-list">
+      <li class='nav-header'><?php echo __('Ações'); ?></li>
+	  
+		<li><?php echo $this->Html->link(__('Editar Produto'), array('action' => 'edit', $produto['Produto']['id']), array('class'=>'ym-button')); ?></li> 
+		<li><?php echo $this->Form->postLink(__('Excluir Produto'), array('action' => 'delete', $produto['Produto']['id']), array('class'=>'ym-button'), __('Você tem certeza que deseja excluir o # %s?', $produto['Produto']['id'])); ?></li> 
+		<li><?php echo $this->Html->link(__('Listar Produtos'), array('action' => 'index'), array('class'=>'ym-button')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Produto'), array('action' => 'add'), array('class'=>'ym-button')); ?></li> 
+<li class='nav-header'><?php echo __('Contratos'); ?></li>		<li><?php echo $this->Html->link(__('Listar Contratos'), array('controller' => 'contratos', 'action' => 'index'), array('class'=>'ym-button')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Contrato'), array('controller' => 'contratos', 'action' => 'add'), array('class'=>'ym-button')); ?></li> 
+</ul>
+   </div>
+</div>
+
+
+
+  <div class="span8" >
     <div class="produtos view ym-cbox">
       <h2><?php  echo __('Produto');?></h2>
-      <table>
+      <table class="table">
 	     <thead>
 	        <tr>
 	          <td width="20%">Campo</td>
@@ -97,18 +115,7 @@
 
 
 </div>
-<div class="ym-col3" >
-    <div class="actions ym-cbox">    
-      <h6><?php echo __('Ações'); ?></h6>
-	  
-		<?php echo $this->Html->link(__('Editar Produto'), array('action' => 'edit', $produto['Produto']['id']), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Form->postLink(__('Excluir Produto'), array('action' => 'delete', $produto['Produto']['id']), array('class'=>'ym-button'), __('Você tem certeza que deseja excluir o # %s?', $produto['Produto']['id'])); ?> 
-		<?php echo $this->Html->link(__('Listar Produtos'), array('action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Produto'), array('action' => 'add'), array('class'=>'ym-button')); ?> 
-<?php echo __('<h6>Contratos</h6>'); ?>		<?php echo $this->Html->link(__('Listar Contratos'), array('controller' => 'contratos', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Contrato'), array('controller' => 'contratos', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-   </div>
-</div>
+
 </div>
 
 

@@ -1,8 +1,20 @@
-<div class="ym-column">
-    <div class="ym-col1" >
-        <div class="ramoAtividades index ym-cbox">
+<div class="row-fluid">
+    <div class="span4">
+        <div class="actions well">
+        
+	        <ul class="nav nav-list">
+	        
+	        	<li class='nav-header'><?php echo __('Ações'); ?></li>
+        
+		        <li><?php echo $this->Html->link(__('Novo Ramo Atividade'), array('action' => 'add')); ?></li>                
+        	</ul>
+	        
+        </div>
+    </div>
+    <div class="span8" >
+        <div class="ramoAtividades index">
 	        <h2><?php echo __('Ramo Atividades');?></h2>
-	        <table cellpadding="0" cellspacing="0">
+	        <table class="table table-striped">
 	        <tr>
 	        		        <th><?php echo $this->Paginator->sort('id');?></th>
 	        		        <th><?php echo $this->Paginator->sort('descricao');?></th>
@@ -36,11 +48,5 @@
 	        </div>
         </div>
     </div>
-    <div class="ym-col3">
-        <div class="actions ym-cbox">
-	        <h3><?php echo __('Ações'); ?></h3>
-	        
-		        <?php echo $this->Html->link(__('Novo Ramo Atividade'), array('action' => 'add'), array('class'=>'ym-button')); ?>        	        </ul>
-        </div>
-    </div>
+    
 </div>

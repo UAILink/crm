@@ -1,33 +1,54 @@
 
-<div class="ym-column">
-    <div class="ym-col1" >   
+<div class="row">
+
+    <div class="span4" >
+    
+        <div class="actions well">
+	 
+        <ul class="nav nav-list">
+        
+        <li class='nav-header'><?php echo __('Ações'); ?></li>
+        
+        		        <li><?php echo $this->Html->link(__('Listar Pessoas Iterações'), array('action' => 'index'), array('class'=>''));?></li>
+        <li class='nav-header'><?php echo __('Pessoas'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index'), array('class'=>'')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add'), array('class'=>'')); ?></li> 
+        
+        </ul>
+	 
+        </div>
+    
+    
+    
+    </div>
+
+    <div class="span8" >   
     
     
     <h4 class="ym-fbox-heading"><?php echo __('Incluir Pessoas Iteração'); ?></h4>
     
-            <div class="pessoasIteracoes form ym-cbox">
-        <div class="ym-form ym-inline">
+            <div class="pessoasIteracoes form">
+        <div class="form">
         <?php echo $this->Form->create('PessoasIteracao', array(
         'inputDefaults' => array(     
-            'div'   => 'ym-fbox-text',
+            'div'   => false,
             # define error defaults for the form
             'error' => array(
               'wrap'  => 'span',
-              'class' => 'ym-error'
+              'class' => 'error'
             )
         )
     ));?>
 	        
-		        <h6 class="ym-fbox-heading"><?php echo __('Dados Pessoas Iteração'); ?></h6>
+		        <h6><?php echo __('Dados Pessoas Iteração'); ?></h6>
         	<?php
 		echo $this->Form->input('pessoa_id');
 		echo $this->Form->input('descricao_iteracao');
 		echo $this->Form->input('motivo');
 	?>
 	    
-	        <div class="ym-fbox-button">
-              <input type="submit" class="ym-button" value="Enviar" id="submit" name="Enviar" />
-              <input type="reset" class="ym-button" value="Limpar" id="reset" name="Limpar" />              
+	        <div class="">
+              <input type="submit" class="btn" value="Enviar" id="submit" name="Enviar" />
+              <input type="reset" class="btn" value="Limpar" id="reset" name="Limpar" />              
             </div>
 	    
 	    
@@ -37,20 +58,7 @@
     
     
     </div>    
-    <div class="ym-col3" >
     
-        <div class="actions ym-cbox">
-	        <h4><?php echo __('Ações'); ?></h4>
-	 
-
-        		        <?php echo $this->Html->link(__('Listar Pessoas Iterações'), array('action' => 'index'), array('class'=>'ym-button'));?>        <?php echo __('<h6>Pessoas</h6>'); ?>		<?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-	 
-        </div>
-    
-    
-    
-    </div>
 </div>
 
 

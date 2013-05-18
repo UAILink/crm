@@ -1,8 +1,24 @@
-<div class="ym-column">
-    <div class="ym-col1" >
-        <div class="pessoasDocumentos index ym-cbox">
+<div class="row-fluid">
+    <div class="span4">
+        <div class="actions well">
+        
+	        <ul class="nav nav-list">
+	        
+	        	<li class='nav-header'><?php echo __('Ações'); ?></li>
+        
+		        <li><?php echo $this->Html->link(__('Novo Pessoas Documento'), array('action' => 'add')); ?></li>        <li class='nav-header'><?php echo __('Tipo Documentos'); ?></li>		<li><?php echo $this->Html->link(__('Listar Tipo Documentos'), array('controller' => 'tipo_documentos', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Tipo Documento'), array('controller' => 'tipo_documentos', 'action' => 'add')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add')); ?></li> 
+        
+        	</ul>
+	        
+        </div>
+    </div>
+    <div class="span8" >
+        <div class="pessoasDocumentos index">
 	        <h2><?php echo __('Pessoas Documentos');?></h2>
-	        <table cellpadding="0" cellspacing="0">
+	        <table class="table table-striped">
 	        <tr>
 	        		        <th><?php echo $this->Paginator->sort('id');?></th>
 	        		        <th><?php echo $this->Paginator->sort('numero');?></th>
@@ -15,7 +31,7 @@
 		<td><?php echo h($pessoasDocumento['PessoasDocumento']['id']); ?>&nbsp;</td>
 		<td><?php echo h($pessoasDocumento['PessoasDocumento']['numero']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($pessoasDocumento['TipoDocumento']['id'], array('controller' => 'tipo_documentos', 'action' => 'view', $pessoasDocumento['TipoDocumento']['id'])); ?>
+			<?php echo $this->Html->link($pessoasDocumento['TipoDocumento']['descricao'], array('controller' => 'tipo_documentos', 'action' => 'view', $pessoasDocumento['TipoDocumento']['id'])); ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link($pessoasDocumento['Pessoa']['id'], array('controller' => 'pessoas', 'action' => 'view', $pessoasDocumento['Pessoa']['id'])); ?>
@@ -44,15 +60,5 @@
 	        </div>
         </div>
     </div>
-    <div class="ym-col3">
-        <div class="actions ym-cbox">
-	        <h3><?php echo __('Ações'); ?></h3>
-	        
-		        <?php echo $this->Html->link(__('Novo Pessoas Documento'), array('action' => 'add'), array('class'=>'ym-button')); ?>        		<?php echo $this->Html->link(__('Listar Tipo Documentos'), array('controller' => 'tipo_documentos', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Tipo Documento'), array('controller' => 'tipo_documentos', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-	        </ul>
-        </div>
-    </div>
+    
 </div>

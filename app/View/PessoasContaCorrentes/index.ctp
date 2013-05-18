@@ -1,8 +1,22 @@
-<div class="ym-column">
-    <div class="ym-col1" >
-        <div class="pessoasContaCorrentes index ym-cbox">
+<div class="row-fluid">
+    <div class="span4">
+        <div class="actions well">
+        
+	        <ul class="nav nav-list">
+	        
+	        	<li class='nav-header'><?php echo __('Ações'); ?></li>
+        
+		        <li><?php echo $this->Html->link(__('Novo Pessoas Conta Corrente'), array('action' => 'add')); ?></li>        <li class='nav-header'><?php echo __('Pessoas'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add')); ?></li> 
+        
+        	</ul>
+	        
+        </div>
+    </div>
+    <div class="span8" >
+        <div class="pessoasContaCorrentes index">
 	        <h2><?php echo __('Pessoas Conta Correntes');?></h2>
-	        <table cellpadding="0" cellspacing="0">
+	        <table class="table table-striped">
 	        <tr>
 	        		        <th><?php echo $this->Paginator->sort('id');?></th>
 	        		        <th><?php echo $this->Paginator->sort('pessoa_id');?></th>
@@ -46,13 +60,5 @@
 	        </div>
         </div>
     </div>
-    <div class="ym-col3">
-        <div class="actions ym-cbox">
-	        <h3><?php echo __('Ações'); ?></h3>
-	        
-		        <?php echo $this->Html->link(__('Novo Pessoas Conta Corrente'), array('action' => 'add'), array('class'=>'ym-button')); ?>        		<?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-	        </ul>
-        </div>
-    </div>
+    
 </div>

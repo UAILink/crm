@@ -1,9 +1,27 @@
 
-<div class="ym-column">
-  <div class="ym-col1" >
+<div class="row">
+
+<div class="span4" >
+    <div class="actions well">    
+    <ul class="nav nav-list">
+      <li class='nav-header'><?php echo __('Ações'); ?></li>
+	  
+		<li><?php echo $this->Html->link(__('Editar Pessoas Endereco'), array('action' => 'edit', $pessoasEndereco['PessoasEndereco']['id']), array('class'=>'ym-button')); ?></li> 
+		<li><?php echo $this->Form->postLink(__('Excluir Pessoas Endereco'), array('action' => 'delete', $pessoasEndereco['PessoasEndereco']['id']), array('class'=>'ym-button'), __('Você tem certeza que deseja excluir o # %s?', $pessoasEndereco['PessoasEndereco']['id'])); ?></li> 
+		<li><?php echo $this->Html->link(__('Listar Pessoas Enderecos'), array('action' => 'index'), array('class'=>'ym-button')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Pessoas Endereco'), array('action' => 'add'), array('class'=>'ym-button')); ?></li> 
+<li class='nav-header'><?php echo __('Pessoas'); ?></li>		<li><?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index'), array('class'=>'ym-button')); ?></li> 
+		<li><?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add'), array('class'=>'ym-button')); ?></li> 
+</ul>
+   </div>
+</div>
+
+
+
+  <div class="span8" >
     <div class="pessoasEnderecos view ym-cbox">
       <h2><?php  echo __('Pessoas Endereco');?></h2>
-      <table>
+      <table class="table">
 	     <thead>
 	        <tr>
 	          <td width="20%">Campo</td>
@@ -18,7 +36,7 @@
 		</td>
 		</tr>		<tr>			<td><?php echo __('Pessoa'); ?></td>
 			<td>
-			<?php echo $this->Html->link($pessoasEndereco['Pessoa']['nome'], array('controller' => 'pessoas', 'action' => 'view', $pessoasEndereco['Pessoa']['id'])); ?>
+			<?php echo $this->Html->link($pessoasEndereco['Pessoa']['id'], array('controller' => 'pessoas', 'action' => 'view', $pessoasEndereco['Pessoa']['id'])); ?>
 			&nbsp;
 		</td>
 		</tr>		<tr>			<td><?php echo __('Logradouro'); ?></td>
@@ -81,18 +99,7 @@
 
 
 </div>
-<div class="ym-col3" >
-    <div class="actions ym-cbox">    
-      <h6><?php echo __('Ações'); ?></h6>
-	  
-		<?php echo $this->Html->link(__('Editar Pessoas Endereco'), array('action' => 'edit', $pessoasEndereco['PessoasEndereco']['id']), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Form->postLink(__('Excluir Pessoas Endereco'), array('action' => 'delete', $pessoasEndereco['PessoasEndereco']['id']), array('class'=>'ym-button'), __('Você tem certeza que deseja excluir o # %s?', $pessoasEndereco['PessoasEndereco']['id'])); ?> 
-		<?php echo $this->Html->link(__('Listar Pessoas Enderecos'), array('action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Pessoas Endereco'), array('action' => 'add'), array('class'=>'ym-button')); ?> 
-<?php echo __('<h6>Pessoas</h6>'); ?>		<?php echo $this->Html->link(__('Listar Pessoas'), array('controller' => 'pessoas', 'action' => 'index'), array('class'=>'ym-button')); ?> 
-		<?php echo $this->Html->link(__('Novo Pessoa'), array('controller' => 'pessoas', 'action' => 'add'), array('class'=>'ym-button')); ?> 
-   </div>
-</div>
+
 </div>
 
 
